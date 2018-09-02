@@ -28,3 +28,28 @@ class FaturaItem(val json: JSONObject) {
         return "$cartao - $orcamento"
     }
 }
+
+class CompraItem(val json: JSONObject){
+    fun getValor(): Double {
+        return json.getDouble("valor_inicial")
+    }
+
+    fun getRecorrente(): Boolean {
+        return json.getBoolean("recorrente")
+    }
+
+    fun getCategoria(): String {
+        return json.getString("categoria")
+    }
+
+    override fun toString(): String {
+        val descricao = json.getString("descricao")
+        var parcelaText = ""
+        val parcelas = json.getInt("parcelas")
+        if (parcelas > 1){
+            val parcela = json.getInt("parcela_atual")
+            parcelaText = "$parcela/$parcelas"
+        }
+        return "$descricao $parcelaText"
+    }
+}

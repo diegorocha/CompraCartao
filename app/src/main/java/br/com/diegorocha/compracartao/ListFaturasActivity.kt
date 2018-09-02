@@ -1,5 +1,6 @@
 package br.com.diegorocha.compracartao
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
@@ -39,6 +40,13 @@ class ListFaturasActivity : AppCompatActivity() {
                 Response.ErrorListener {
                     snackBar("Não foi possível obter as faturas")
                 })
+        list.setOnItemClickListener { parent, view, position, id ->
+            val item = list.getItemAtPosition(position) as FaturaItem
+            val intent = Intent(this, FaturaActivity::class.java)
+            intent.putExtra("fatura", item.id())
+            startActivity(intent)
+
+        }
     }
 
     private fun snackBar(text: String) {

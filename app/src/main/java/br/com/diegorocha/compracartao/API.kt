@@ -65,11 +65,11 @@ class API(private val context: Context) {
         }
     }
 
-    fun createCompra(payload: JSONObject?, response: Response.Listener<JSONObject>, error: Response.ErrorListener) {
+    fun getFatura(id: Int, response: Response.Listener<JSONObject>, error: Response.ErrorListener) {
         val request = createRequestJson(
-                Request.Method.POST,
-                "/api/cartao/compra/",
-                payload,
+                Request.Method.GET,
+                "/api/cartao/fatura/$id/",
+                null,
                 response,
                 error)
         VolleyFactory.getInstance(context).addToRequestQueue(request)
@@ -79,6 +79,16 @@ class API(private val context: Context) {
         val request = createRequestJson(
                 Request.Method.POST,
                 "/api/cartao/sms/parse/",
+                payload,
+                response,
+                error)
+        VolleyFactory.getInstance(context).addToRequestQueue(request)
+    }
+
+    fun createCompra(payload: JSONObject?, response: Response.Listener<JSONObject>, error: Response.ErrorListener) {
+        val request = createRequestJson(
+                Request.Method.POST,
+                "/api/cartao/compra/",
                 payload,
                 response,
                 error)

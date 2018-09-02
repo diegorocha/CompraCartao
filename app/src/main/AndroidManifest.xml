@@ -31,7 +31,8 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings" />
-        <activity android:name=".ListFaturasActivity"></activity>
+        <activity android:name=".ListFaturasActivity" />
+        <activity android:name=".FaturaActivity"></activity>
     </application>
 
 </manifest>

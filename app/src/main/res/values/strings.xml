@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Compra Cartão</string>
     <string name="action_settings">Configurações</string>
+    <string name="action_faturas">Faturas</string>
     <string name="descricao">Descrição</string>
     <string name="parcelas">Parcelas</string>
     <string name="valor_dolar">Valor Dólar</string>

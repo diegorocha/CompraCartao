@@ -58,12 +58,18 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
             R.id.action_settings -> startSettingsActivity()
+            R.id.action_faturas -> startListFaturasActivity()
             else -> super.onOptionsItemSelected(item)
         }
     }
 
     private fun startSettingsActivity(): Boolean {
         startActivity(Intent(this, SettingsActivity::class.java))
+        return true
+    }
+
+    private fun startListFaturasActivity(): Boolean {
+        startActivity(Intent(this, ListFaturasActivity::class.java))
         return true
     }
 

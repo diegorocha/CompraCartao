@@ -13,9 +13,13 @@ class CategoriaItem(var json: JSONObject) {
     }
 }
 
-class FaturaItem(var json: JSONObject) {
+class FaturaItem(val json: JSONObject) {
     fun id(): Int {
         return json.getInt("id")
+    }
+
+    fun getValor(): Double {
+        return json.getDouble("valor_inicial")
     }
 
     override fun toString(): String {

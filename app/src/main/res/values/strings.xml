@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Compra Cartão</string>
+    <string name="action_settings">Configurações</string>
+    <string name="descricao">Descrição</string>
+    <string name="parcelas">Parcelas</string>
+    <string name="valor_dolar">Valor Dólar</string>
+    <string name="valor">Valor</string>
+    <string name="fatura">Fatura</string>
+    <string name="categoria">Categoria</string>
+    <string name="recorrente">Recorrente</string>
+    <string name="campoObrigatorio">Campo Obrigatório</string>
+    <string name="title_activity_settings">Configurações</string>
+    <string name="pref_header_api">API</string>
+    <string name="pref_title_API">API URL</string>
+    <string name="pref_default_API">https://orcamento.diegorocha.com.br</string>
+    <string name="pref_title_token">API Token</string>
+</resources>

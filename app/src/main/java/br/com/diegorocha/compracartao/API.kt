@@ -1,6 +1,7 @@
 package br.com.diegorocha.compracartao
 
 import android.content.Context
+import android.preference.PreferenceManager
 import com.android.volley.AuthFailureError
 import com.android.volley.Request
 import com.android.volley.RequestQueue
@@ -11,7 +12,19 @@ import com.android.volley.toolbox.Volley
 import org.json.JSONArray
 import org.json.JSONObject
 
-class API(val context: Context, val baseUrl: String, val token: String) {
+class API(private val context: Context) {
+    private lateinit var baseUrl: String
+    private lateinit var token: String
+
+    init {
+        val prefs = PreferenceManager.getDefaultSharedPreferences(context)
+        prefs.getString("url", "https://orcamento.diegorocha.com.br")?.let {
+            baseUrl = it
+        }
+        prefs.getString("token", null)?.let {
+            token = it
+        }
+    }
 
     private fun getRequestHeaders() : HashMap<String, String>{
         val headers = HashMap<String, String>()

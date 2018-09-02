@@ -2,7 +2,6 @@ package br.com.diegorocha.compracartao
 
 import android.content.Intent
 import android.os.Bundle
-import android.preference.PreferenceManager
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
@@ -11,7 +10,6 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import com.android.volley.Response
-
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.json.JSONObject
@@ -32,7 +30,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        initAPI()
+        api = API(this)
         loadFaturas()
         loadCategorias()
 
@@ -67,23 +65,6 @@ class MainActivity : AppCompatActivity() {
     private fun startSettingsActivity(): Boolean {
         startActivity(Intent(this, SettingsActivity::class.java))
         return true
-    }
-
-    private fun initAPI() {
-        val prefs = PreferenceManager.getDefaultSharedPreferences(this)
-        var baseUrl = ""
-        var token = ""
-        prefs.getString("url", "https://orcamento.diegorocha.com.br")?.let {
-            baseUrl = it
-        } ?: run {
-            snackBar("URL da API não informada.")
-        }
-        prefs.getString("token", null)?.let {
-            token = it
-        } ?: run {
-            snackBar("API Token não informado.")
-        }
-        api = API(this, baseUrl, token)
     }
 
     private fun validateFields(): Boolean {

@@ -73,6 +73,15 @@ class MainActivity : AppCompatActivity() {
         return true
     }
 
+    private fun initForm() {
+        txtDescricao.text?.let { it.clear() }
+        txtValor.text?.let { it.clear() }
+        txtValorDolar.text?.let { it.clear() }
+        txtParcelas.text?.let { it.clear() }
+        txtRecorrente.isChecked = false
+        txtDescricao.requestFocus()
+    }
+
     private fun validateFields(): Boolean {
         var valid = true
         if (txtFatura.selectedItemId == AdapterView.INVALID_ROW_ID) {
@@ -219,6 +228,7 @@ class MainActivity : AppCompatActivity() {
         api.createCompra(
                 getPayload(),
                 Response.Listener {
+                    initForm()
                     snackBar("Compra inserida com sucesso")
                 },
                 Response.ErrorListener {

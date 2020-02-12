@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package br.com.diegorocha.compracartao
 
 import android.annotation.TargetApi

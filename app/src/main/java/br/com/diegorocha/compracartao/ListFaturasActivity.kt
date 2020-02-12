@@ -40,7 +40,7 @@ class ListFaturasActivity : AppCompatActivity() {
                 Response.ErrorListener {
                     snackBar("Não foi possível obter as faturas")
                 })
-        list.setOnItemClickListener { parent, view, position, id ->
+        list.setOnItemClickListener { _, _, position, _ ->
             val item = list.getItemAtPosition(position) as FaturaItem
             val intent = Intent(this, FaturaActivity::class.java)
             intent.putExtra("fatura", item.id())

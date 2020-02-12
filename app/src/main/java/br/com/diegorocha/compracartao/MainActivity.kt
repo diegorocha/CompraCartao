@@ -111,7 +111,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun getPayload(): JSONObject {
         val payload = JSONObject()
-        val valorReal = parseFloat(txtValor.text.toString())
+        var valorReal = parseFloat(txtValor.text.toString())
         var valorDolar: Float? = null
         var parcelas = 1
         if (!txtValorDolar.text.isNullOrEmpty()) {
@@ -119,6 +119,9 @@ class MainActivity : AppCompatActivity() {
         }
         if (!txtParcelas.text.isNullOrBlank()) {
             parcelas = parseInt(txtParcelas.text.toString())
+            if (parcelas > 1) {
+                valorReal /= parcelas
+            }
         }
         txtFatura.selectedItem?.let {
             val item = it as FaturaItem

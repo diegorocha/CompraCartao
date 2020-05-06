@@ -14,6 +14,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import org.json.JSONObject
 import java.text.NumberFormat
+import kotlin.math.round
 
 class MainActivity : AppCompatActivity() {
     private lateinit var api : API
@@ -128,7 +129,7 @@ class MainActivity : AppCompatActivity() {
             payload.put("fatura", item.id())
         }
         payload.put("descricao", txtDescricao.text)
-        payload.put("valor_real", valorReal)
+        payload.put("valor_real", round(valorReal * 100) / 100)
         valorDolar?.let {
             payload.put("valor_dolar", it)
         }

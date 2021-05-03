@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/CompraCartao.iml" filepath="$PROJECT_DIR$/CompraCartao.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/CompraCartao-app.iml" filepath="$PROJECT_DIR$/app/CompraCartao-app.iml" group="CompraCartao/app" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/diego-CompraCartao.iml" filepath="$PROJECT_DIR$/diego-CompraCartao.iml" group="CompraCartao" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CompraCartao.iml" filepath="$PROJECT_DIR$/.idea/modules/CompraCartao.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CompraCartao.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CompraCartao.app.iml" />
     </modules>
   </component>
 </project>
